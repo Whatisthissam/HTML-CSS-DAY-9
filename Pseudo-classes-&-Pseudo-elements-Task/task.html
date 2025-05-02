@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Mood Journal</title>
+  <style>
+    
+    body {
+      background: #034568;
+      padding: 20px;
+    }
+
+    .entry {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .entry:nth-child(even) {
+      background-color: #2382c5;
+    }
+
+    .entry:nth-child(odd) {
+      background-color: #5da3d5;
+    }
+
+    .entry::before {
+      content: '';
+      font-size: 30px;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+
+    .happy::before {
+      content: "😄";
+    }
+
+    .happy:hover::before {
+      content: "😀";
+    }
+
+    .meh::before {
+      content: "😐";
+    }
+
+    .meh:hover::before {
+      content: "🥲";
+    }
+
+    .sad::before {
+      content: "😢";
+    }
+
+    .sad:hover::before {
+      content: "😢";
+    }
+
+    .entry p::first-letter {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    h2 {
+      margin-left: 40px; 
+    }
+
+    .like-button {
+      margin-top: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .like-button:active {
+      transform: scale(1.2);
+      color: rgb(255, 255, 255);
+    }
+
+    .like-button:active::after {
+      content: " 💖";
+    }
+
+    .entry:hover {
+      transform: scale(1.02);
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 style="color: azure;">My Mood Journal🥲</h1>
+
+  <div class="entry happy">
+    <h2>Feeling Great!</h2>
+    <p>Today was awesome. I finished my homework and played outside!</p>
+    <button class="like-button" style="background-color: rgba(226, 29, 23, 0.85); padding: 10px; border-radius: 10px; font-family: 'Courier New', Courier, monospace;"><b>❤️Like👍🏻</b></button>
+  </div>  
+
+  <div class="entry meh">
+    <h2>Just an Okay Day</h2>
+    <p>Nothing much happened. It was a pretty normal and slow day.</p>
+    <button class="like-button" style="background-color: rgba(226, 29, 23, 0.85); padding: 10px; border-radius: 10px; font-family: 'Courier New', Courier, monospace;"><b>❤️Like👍🏻</b></button>
+  </div>
+
+  <div class="entry sad">
+    <h2>Feeling Down</h2>
+    <p>I didn’t feel like myself today. Hope tomorrow is better.</p>
+    <button class="like-button" style="background-color: rgba(226, 29, 23, 0.85); padding: 10px; border-radius: 10px; font-family: 'Courier New', Courier, monospace;"><b>❤️Like👍🏻</b></button>
+  </div>
+
+</body>
+</html>
