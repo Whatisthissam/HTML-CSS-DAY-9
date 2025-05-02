@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Task
+
+    </title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .section {
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid #ff06068d;
+            border-radius: 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: SlideRight 2s forwards;
+        }
+
+        @keyframes SlideRight {
+            0% {
+                left: 0;
+                background: red;
+            }
+
+            100% {
+                left: 100px;
+                background: green;
+            }
+        }
+
+        .circle {
+            background-color: rgb(226, 15, 15);
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            animation: changecolor 10s;
+            animation-delay: 2s;
+
+        }
+
+        @keyframes changecolor {
+
+            from {
+                background-color: blue;
+            }
+
+            to {
+                background-color: rgba(68, 255, 0, 0.426);
+            }
+
+
+
+        }
+
+        .bounce {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: rgba(1, 77, 253, 0.866);
+            animation: bounce 1s ease-in-out;
+            position: relative;
+            animation-iteration-count: 3;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-100px);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            75% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        .yo-yo {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            animation: slide 2s infinite alternate;
+        }
+
+
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+            background-color: coral;
+            position: relative;
+            animation: move 2s infinite;
+        }
+
+        .linear {
+            animation-timing-function: linear;
+        }
+
+        .ease-in {
+            animation-timing-function: ease-in;
+        }
+
+        .ease-out {
+            animation-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes move {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+
+        @keyframes slide {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        .grow-box {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            animation: grow 2s forwards;
+        }
+
+        @keyframes grow {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(2);
+            }
+        }
+
+
+        .backwards-box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(0, 51, 255);
+            opacity: 0.2;
+            transform: scale(0.5);
+            animation: appear 2s ease 1s backwards;
+        }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .moving-box {
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+            position: relative;
+            animation: slideBox 2s infinite linear;
+            animation-play-state: running;
+        }
+
+        @keyframes slideBox {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        /* STYLE */
+        .loader {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            background-color: teal;
+            border-radius: 50%;
+            animation-name: bounce;
+            animation-duration: 0.6s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+            animation-play-state: running;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+
+            to {
+                transform: translateY(-15px);
+                opacity: 1;
+            }
+        }
+
+        /* STYLE */
+        .hover-card {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: #ddd;
+            padding: 20px;
+            margin-top: 30px;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .hover-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background-color: #007BFF;
+            transition: none;
+            animation: slide-in 0.4s forwards;
+            animation-play-state: paused;
+        }
+
+        .hover-card:hover::after {
+            animation-play-state: running;
+        }
+
+        @keyframes slide-in {
+            from {
+                left: -100%;
+            }
+
+            to {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 1</h1>
+    <section class="section">
+        <div class="box">
+            <h1 style="text-align: center; font-size: 10px; color: beige; margin-top: 0%;">This is color changing box
+            </h1>
+        </div>
+    </section>
+
+
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 2</h1>
+
+    <section class="section">
+
+        <div class="circle">
+            <h1 style="text-align: center; font-size: 10px; color: beige; margin-top: 0%; padding: 25px;">This is circle
+                changing color</h1>
+        </div>
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 3</h1>
+    <section class="section" style="padding-top: 150px;">
+
+        <div class="bounce">
+            <h1 style="text-align: center; font-size: 10px; color: beige; margin-top: 0%; padding: 30px;">This is a
+                bouncing circle
+            </h1>
+        </div>
+
+    </section>
+
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 4</h1>
+    <section class="section">
+
+        <div class="yo-yo">
+            <h1 style="text-align: center; font-size: 15px; color: beige; margin-top: 0%; padding: 20px;">This is a
+                yo-yo
+            </h1>
+        </div>
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 5</h1>
+    <section class="section">
+
+
+        <div class="box linear"></div>
+        <div class="box ease-in"></div>
+        <div class="box ease-out"></div>
+        <div class="box ease-in-out"></div>
+
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 6</h1>
+
+    <section class="section" style="padding-top: 100px; padding: 50px;">
+
+        <div class="grow-box">
+            <h1 style="text-align: center; font-size: 5px; color: beige; margin-top: 0%; padding: 10px;">This is a grow
+                box
+
+            </h1>
+        </div>
+
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 7</h1>
+
+    <section class="section" style="padding-top: 100px; padding: 50px;">
+
+        <div class="backwards-box">
+            <h1 style="text-align: center; font-size: 30px; color: beige; margin-top: 0%; padding-top: 50px;">This is a
+                backwards
+                box
+
+            </h1>
+        </div>
+
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 8</h1>
+
+    <section class="section" style="padding-top: 100px; padding: 50px;">
+
+        <div id="box" class="moving-box"></div>
+        <br>
+        <button onclick="toggleAnimation()">Pause / Resume</button>
+
+        <script>
+            function toggleAnimation() {
+                const box = document.getElementById("box");
+                const currentState = box.style.animationPlayState || 'running';
+                box.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+            }
+        </script>
+
+
+    </section>
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 9</h1>
+    <section class="section">
+
+
+        <div class="loader" style="margin-top: 30px;">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+
+
+    </section>
+
+
+    <h1 style="color: aliceblue; padding: 1px; margin: 10px;"> Task 10</h1>
+    <section class="section">
+
+
+
+        <div class="hover-card"
+            style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 30px; padding-top: 40px;">
+            Hover me</div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
